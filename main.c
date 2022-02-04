@@ -1,6 +1,6 @@
 #include "includes.h"
-#include "assembler.h"
-#include "Processor.h"
+#include "assembler/assembler.h"
+#include "processor/Processor.h"
 
 
 
