@@ -8,3 +8,12 @@ Processor is the program, that runs binary code.
 ### [stack](https://github.com/ajlekcahdp4/Processor/tree/main/stack)
 Just my realization of stack data structure.
 
+## To run this code use:
+```
+$ make
+$ make run 
+```
+## To delete *.0 files use:
+```
+$ make clean
+```
