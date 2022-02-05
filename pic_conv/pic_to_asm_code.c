@@ -4,7 +4,7 @@
 int main (int argc, char ** argv)
 {
     FILE * pic_file = fopen (argv[argc - 1], "r");
-    FILE * asm_file = fopen ("pic_code.txt", "w");
+    FILE * asm_file = fopen ("pic_code.asm", "w");
 
     struct stat buf;
     stat(argv[argc - 1], &buf);
