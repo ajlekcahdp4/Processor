@@ -23,8 +23,8 @@ $ make clean
 * And then run:
 
 ```
-$ make pic_conv
-$ make pic_conv_run
+$ make pic_convert
+$ make pic_convert_run
 ```
 ### To display a picture on the screen use:
 * Assign the variable ASMCODE with file/path/and/piccodename.txt
