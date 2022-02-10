@@ -10,8 +10,8 @@ push [45] //Push number from RAM (from index 45)
 push [rax + 2] //Push from RAM["number from register ax" + 2]
 ```
 ### pop "arg"
-"pop" command pop stack into argument
-*avaliable types of pop's argument:
+* "pop" command pop stack into argument
+* avaliable types of pop's argument:
 ```
 pop rax //Pop number into register ax
 pop [45] //Pop number into RAM[45]
