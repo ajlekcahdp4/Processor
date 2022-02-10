@@ -1,6 +1,6 @@
 # Assembler
 ## This assembler has commands:
-### push "arg"
+### * push "arg"
 * "push" command push argument into stack
 * avaliable types of push's argument:
 ```
