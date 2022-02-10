@@ -1,4 +1,4 @@
-ASMCODE=examples_asm_code/factorial_rec.txt
+ASMCODE=examples_asm_code/factorial_rec.asm
 CC=gcc
 CFLAGS= 
 PIC=pic_conv/pictures/pic_to_draw.txt
