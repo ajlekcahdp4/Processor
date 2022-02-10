@@ -1,7 +1,7 @@
 # Assembler
 ## This assembler has commands:
 ### push "arg"
-"push" command push argument into stack
+* "push" command push argument into stack
 * avaliable types of push's argument:
 ```
 push 1 //Push (int)1
