@@ -14,7 +14,7 @@ Just my realization of stack data structure.
 $ make
 $ make run 
 ```
-### To delete *.0 files use:
+### To delete all *.o , *.out and logfiles use:
 ```
 $ make clean
 ```
