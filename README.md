@@ -9,6 +9,11 @@ Processor is the program, that runs binary code.
 Just my realization of stack data structure.
 ### To select an executable assembler file:
 * Assign the variable ASMCODE with file/path/and/codefilename.txt
+### To clone this repository run:
+```
+git clone https://github.com/ajlekcahdp4/Processor
+cd Processor
+```
 ### To run assembler use:
 ```
 make Asm
