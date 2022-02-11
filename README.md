@@ -11,29 +11,28 @@ Just my realization of stack data structure.
 * Assign the variable ASMCODE with file/path/and/codefilename.txt
 ### To run assembler use:
 ```
-$ make Asm
+make Asm
+./asm.out asm_code_file_name
 ```
 ### To run processor use:
 ```
-$ make Proc
+make Proc
+./proc.out bin_code_file_name
 ```
 ### To run both assembler and processor use:
 ```
 $ make
+./asm.out asm_code_file_name
+./proc.out bin_code_file_name
 ```
 ### To convert picture to asm code use:
-* Assign the variable PIC with file/path/and/pic_name.txt
 * And then run:
 
 ```
-$ make pic_convert
+make pic_convert
+./conv pic_file_name
 ```
-### To display a picture on the screen use:
-* Assign the variable ASMCODE with file/path/and/piccodename.txt
-* Then run:
-```
-$ make
-```
+
 
 ### To delete all *.o , *.out and logfiles use:
 ```

@@ -20,7 +20,7 @@ void delay (int ms)
     while (clock() < c) {;}
 }
 
-void Processor (FILE* log_file)
+void Processor (FILE* log_file, char* code_file_name)
 {
 
     struct ProcData Data = {};
@@ -33,7 +33,7 @@ void Processor (FILE* log_file)
 
     int *RAM = (int*)calloc (1024, sizeof(int));
 
-    FILE* code_file = fopen ("code.bin", "rb");
+    FILE* code_file = fopen (code_file_name, "rb");
 
 
     struct stat buf;
