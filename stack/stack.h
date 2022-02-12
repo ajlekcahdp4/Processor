@@ -97,7 +97,7 @@ typedef struct Stack
     FILE * log_file;
     long long hash;
 
-    int capacity;
+    size_t capacity;
     size_t size;
     TYPE_NAME * data;
 

@@ -4,7 +4,7 @@ DEF_CMD(push, 1, 1, {
     *ip += 1;
     if (cmd & (1<<6))
     {
-        arg += Data->reg[ *(code + *ip) ];
+        arg += Data->reg[ (int)(*(code + *ip)) ];
         *ip += 1;
     }
     if (cmd & (1<<7))
@@ -32,7 +32,7 @@ DEF_CMD (pop, 2, 1, {
         delay(10000);
         if (cmd & (1<<6))
         {
-            index += Data->reg[ *(code + *ip) ];
+            index += Data->reg[ (int)*(code + *ip) ];
             *ip += 1;
         }
         if (cmd & (1<<7))

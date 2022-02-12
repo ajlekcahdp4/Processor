@@ -62,7 +62,7 @@
                             j++;                                                                                                            \
                         }                                                                                                                   \
                         i++;                                                                                                                \
-                        SkipSpaces(command_line, &i, log_file);                                                                             \
+                        SkipSpaces(command_line, &i);                                                                                       \
                     }                                                                                                                       \
                     if (command_line[i] == 'r' && NOT_END )                                                                                 \
                     {                                                                                                                       \
@@ -74,7 +74,7 @@
                         code[*ip] = reg;                                                                                                    \
                         *ip += 1;                                                                                                           \
                     }                                                                                                                       \
-                    if ((command_line[i] <= '9' && command_line[i] >= '0' || command_line[i] == '-' || command_line[i] == '+') && NOT_END ) \
+                    if (((command_line[i] <= '9' && command_line[i] >= '0') || command_line[i] == '-' || command_line[i] == '+') && NOT_END ) \
                     {                                                                                                                       \
                         (*(code + cmd)) = (*(code + cmd)) | (1 << 7);                                                                       \
                         *((int*)(code + *ip)) = FindArg (command_line, &i, log_file);                                                       \
@@ -267,18 +267,18 @@ int FindArg (char * command_line, int *index, FILE* log_file)
     int ARG = 0;
     int i = *index;
     int sign = 1;
-    SkipSpaces (command_line, &i, log_file);
+    SkipSpaces (command_line, &i);
     if (command_line[i] == '-' && sign == 1)
     {
         sign *= -1;
         i++;
-        SkipSpaces (command_line, &i, log_file);
+        SkipSpaces (command_line, &i);
     }
     else if (command_line[i] == '+')
     {
         sign *= 1;
         i++;
-        SkipSpaces (command_line, &i, log_file);
+        SkipSpaces (command_line, &i);
     }
     while (command_line[i] != '\t' &&command_line[i] != ' ' && NOT_END )
     {
@@ -297,7 +297,7 @@ int FindArg (char * command_line, int *index, FILE* log_file)
     }
     ARG *= sign;
     *index = i;
-    SkipSpaces (command_line, index, log_file);
+    SkipSpaces (command_line, index);
     return ARG;
 }
 
@@ -326,7 +326,7 @@ int FindReg (char * command_line, int *index, FILE * log_file)
         ERROR (ERR_WRONG_ARGUMENT);
     }
     *index = i;
-    SkipSpaces (command_line, index, log_file);
+    SkipSpaces (command_line, index);
     return REG;
 }
 
@@ -384,7 +384,7 @@ void LablesCheck (LABLES *lables, int labl_cnt, FILE* log_file)
         }
     }
 }
-void SkipSpaces (char* command_line, int *i, FILE * log_file)
+void SkipSpaces (char* command_line, int *i)
 {
     while ((command_line[*i] == ' ' || command_line[*i] == '\t') && command_line[*i] != '\n')
             *i += 1;

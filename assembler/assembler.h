@@ -36,7 +36,7 @@ int     TranslateToCode (char* buffer, int ch_numb, char* code, LABLES** lables,
 int     StrnCompare     (const char *str1, const char *str2, int n);
 int     FindArg         (char * comand_line, int * index, FILE* log_file);
 int     FindReg         (char * comand_line, int *index, FILE* log_file);
-void    SkipSpaces      (char* comand_line, int *i, FILE * log_file);
+void    SkipSpaces      (char* comand_line, int *i);
 int     IsLable         (char* command_line, LABLES** lables, int labl_cnt);
 void    LablesCheck     (LABLES *lables, int labl_cnt, FILE* log_file);
 int     IsEndOfStr      (char *command_line, int *i, FILE *log_file);

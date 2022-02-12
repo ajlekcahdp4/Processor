@@ -7,7 +7,7 @@ static int StackOk (Stack * stk);
 static long long HashCalc (Stack * stk)
 {
     long long HASH = 0;
-    for (int i = 0; i < (stk->capacity * sizeof (TYPE_NAME) + 2 * sizeof (long long) - 1); i++)
+    for (unsigned i = 0; i < (stk->capacity * sizeof (TYPE_NAME) + 2 * sizeof (long long) - 1); i++)
     {
         HASH += ((unsigned int)*((char*)stk->data - sizeof(long long) + i)) * i;
     }
@@ -23,7 +23,7 @@ static long long HashCalc (Stack * stk)
 int ZerosCheck (Stack * stk)
 {
     int sum = 0;
-    for (int i = stk->size; i < stk->capacity - 1; i ++)
+    for (unsigned i = stk->size; i < stk->capacity - 1; i ++)
     {
         sum += stk->data[i];
     }
@@ -37,8 +37,6 @@ static int StackOk (Stack * stk)
     if (stk->capacity < 1)
         return ERR_WRONG_CAPACITY;
     if (stk->size > stk->capacity)
-        return ERR_WRONG_SIZE;
-    if (stk->size < 0)
         return ERR_WRONG_SIZE;
     if (stk->canary1 != (long long)&stk->canary1)
         return ERR_WRONG_CANARY;
@@ -62,12 +60,12 @@ void StackDump (Stack * stk, char * string)
     fprintf (stk->log_file, "Stack [%p] %s\n", stk, string);
     fprintf (stk->log_file, "{\n");
     fprintf (stk->log_file, "%4scanary1 = %X\n", "", (unsigned int)stk->canary1);
-    fprintf (stk->log_file, "%4scapacity = %d\n", "", stk->capacity);
+    fprintf (stk->log_file, "%4scapacity = %ld\n", "", stk->capacity);
     fprintf (stk->log_file, "%4ssize = %u\n", "", (unsigned int)stk->size);
     fprintf (stk->log_file, "%4sdata[%p]\n", "", stk->data);
     fprintf (stk->log_file, "%4s{\n", "");
     fprintf (stk->log_file, "%8sdata canary 1 = %X\n", "", (unsigned int)(*PTR_DATA_CANARY1));
-    int i = 0;
+    unsigned i = 0;
     for (i = 0; i < stk->capacity; i ++)
     {
         if (i < stk->size)
@@ -169,7 +167,7 @@ void StackResize (Stack * stk, size_t capacity)
     *PTR_DATA_CANARY1 = (long long)PTR_DATA_CANARY1;
     *PTR_DATA_CANARY2 = (long long)PTR_DATA_CANARY2;
 
-    for (int i = stk->size; i < stk->capacity; i++)
+    for (unsigned i = stk->size; i < stk->capacity; i++)
     {
         stk->data[i] = 0;
     }
