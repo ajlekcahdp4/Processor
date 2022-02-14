@@ -1,4 +1,4 @@
-#include "Stack.h"
+#include "stack.h"
 
 
 static long long HashCalc (Stack * stk);
