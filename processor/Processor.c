@@ -16,7 +16,7 @@ int BitComp (char a, char b, int n)
 
 void delay (int ms)
 {
-    unsigned long c = clock() + ms;
+    int c = clock() + ms;
     while (clock() < c) {;}
 }
 
