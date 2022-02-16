@@ -228,10 +228,10 @@ int StrnCompare(const char *str1, const char *str2, int n)
     return (str1[i] - str2[i]);
 }
 
-void Assembler (char * buffer, int ch_numb, FILE* log_file)
+void Assembler (char * buffer, int ch_numb, char* bin_file_name, FILE* log_file)
 {
     assert (buffer);
-    FILE * code_file = fopen ("code.bin", "wb");
+    FILE * code_file = fopen (bin_file_name, "wb");
 
     int labl_cnt = 0;
     LABLES * lables = (LABLES*) calloc (labl_cnt + 1, sizeof(LABLES));

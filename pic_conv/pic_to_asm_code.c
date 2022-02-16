@@ -3,11 +3,11 @@
 #include <sys/stat.h>
 int main (int argc, char ** argv)
 {
-    FILE * pic_file = fopen (argv[argc - 1], "r");
-    FILE * asm_file = fopen ("pic_code.asm", "w");
+    FILE * pic_file = fopen (argv[argc - 2], "r");
+    FILE * asm_file = fopen (argv[argc - 1], "w");
 
     struct stat buf;
-    stat(argv[argc - 1], &buf);
+    stat(argv[argc - 2], &buf);
     int pixels_numb = buf.st_size;
 
     char * pic = (char*)calloc (pixels_numb + 1, sizeof(char));
