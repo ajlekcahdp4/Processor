@@ -18,20 +18,23 @@ cd Processor
 ```
 make Asm
 ./asm.out inputfile.asm outputfile.bin
-// assemble code from inputfile.asm and save binary code into outputfile.bin
 ```
+* This will assemble code from inputfile.asm and save binary code into outputfile.bin
+
 ### To run processor use:
 ```
 make Proc
 ./proc.out bin_code_file_name.bin
-// run binary code from bin_code_file_name.bin
 ```
+* This will run binary code from bin_code_file_name.bin
+
 ### To convert ASCII-art picture to assembly code use:
 ```
 make pic_convert
 ./conv inputfile.txt pic_asm_code.asm
-// Read picture from inputfile.txt and save assembly code of pictur into pic_asm_code.asm
 ```
+* Program will read picture from inputfile.txt and save assembly code of pictur into pic_asm_code.asm
+
 To assemble this picture's code run:
 ```
 make Asm
